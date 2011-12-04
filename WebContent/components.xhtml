@@ -1,0 +1,28 @@
+
+
+
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+<h:head>
+	<link type="text/css" rel="stylesheet" href="themes/bluesky/skin.css" />
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="inputText" />
+			<h:inputText value="#{bean.text}">
+				<p:ajax update="out" />
+			</h:inputText>
+			<h:outputLabel value="outputText" />
+			<h:outputText id="out" value="#{bean.text}" />
+			<h:outputLabel value="calendar" />
+			<p:calendar value="#{dateBean.date}" mode="popup" showOn="button"
+				pattern="dd.MM.yyyy" />
+			<h:outputLabel value="colorPicker" />
+			<p:colorPicker value="#{colorBean.color}" />
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
